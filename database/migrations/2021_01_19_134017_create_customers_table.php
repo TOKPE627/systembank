@@ -15,6 +15,10 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            // $table->foreign('user_id')->references('id') ->on('users') -> onDelete('cascade');
+            $table->integer('account_type_id');
+            // $table->foreign('account_type_id')->references('id') ->on('accounts_types') -> onDelete('cascade');
             $table->timestamps();
         });
     }

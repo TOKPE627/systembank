@@ -272,9 +272,9 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" if you are to exit your session.</div>
+            <div class="modal-body">Select "Logout" if you are ready to exit your session.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

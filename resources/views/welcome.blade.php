@@ -1,100 +1,145 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="{{ mix('css/main.css') }}" rel="stylesheet" />
+    <link href="resources/css/style.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/458678413d.js" crossorigin="anonymous"></script>
 
-        <title>Laravel</title>
+    <title>BANK SYSTEM</title>
+    <style>
+        #menu-toggle:checked + #menu{
+            display: block;
+        }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        /* #Mega Menu Styles
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .mega-menu {
+            display: none;
+            left: 0;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        .uping{
+            z-index: 555 !important;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+        /* #hoverable Class Styles
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .hoverable {
+            position: static;
+        }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+        .hoverable > a:after {
+            content: "\25BC";
+            font-size: 10px;
+            padding-left: 6px;
+            position: relative;
+            top: -1px;
+        }
 
-            .content {
-                text-align: center;
-            }
+        .hoverable:hover .mega-menu {
+            display: block;
+        }
 
-            .title {
-                font-size: 84px;
-            }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        /* #toggle Class Styles
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        .toggleable > label:after {
+            content: "\25BC";
+            font-size: 10px;
+            padding-left: 6px;
+            position: relative;
+            top: -1px;
+        }
 
-                        @if (Route::has('register'))
-                            <a href="{{ url('registration') }}">Register</a>
-                        @endif
-                    @endauth
+        .toggle-input {
+            display: none;
+        }
+        .toggle-input:not(checked) ~ .mega-menu {
+            display: none;
+        }
+
+        .toggle-input:checked ~ .mega-menu {
+            display: block;
+        }
+
+        .toggle-input:checked + label {
+            color: white;
+            background: #2c5282; /*@apply bg-blue-800 */
+        }
+
+        .toggle-input:checked ~ label:after {
+            content: "\25B2";
+            font-size: 10px;
+            padding-left: 6px;
+            position: relative;
+            top: -1px;
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+
+    </style>
+</head>
+<body class="bg-blue-700">
+<div class="flex items-center h-screen w-auto justify-center bg-teal-lighter">
+    <div class="w-auto bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
+        <div class="box-header">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert"></button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block text-red-600">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+            @endif
         </div>
-    </body>
+        <div class="flex flex-shrink-0 justify-center">
+            <img src="{{asset('img/brand/bank.png')}}" alt="" class="h-20 w-auto justify-center ml-ç4">
+        </div>
+        <h1 class="block w-full text-center text-grey-darkest mb-6 mt-4">Happy to see you !!</h1>
+        <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="{{url('login')}}" method="post">
+            @csrf
+            <div class="flex flex-col mb-4 md:w-full justify-center">
+                <label class="mb-2 font-bold text-lg text-grey-darkest" for="email">E-mail</label>
+                <input class="border py-2 px-3 text-grey-darkest" type="email" name="email" required>
+            </div>
+            <div class="flex flex-col mb-6 md:w-full">
+                <label class="mb-2 font-bold text-lg text-grey-darkest" for="password">Password</label>
+                <input class="border py-2 px-3 text-grey-darkest" type="password"  name="password" required>
+            </div>
+            <button class="btn btn-blue mx-auto" type="submit">Connexion</button>
+        </form>
+
+        <a class="link link-grey" href="{{url('forgot_password')}}">Forgot password?</a>
+        <button class="modal-open bg-transparent border border-gray-500 hover:border-indigo-500 text-blue-500
+            hover:text-indigo-500 font-bold py-2 px-4 rounded-full">
+            <a class="link link-grey" href="{{url('registration')}}">No account yet?</a>
+        </button>
+    </div>
+</div>
+
+
+</body>
 </html>
+

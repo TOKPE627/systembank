@@ -31,7 +31,8 @@ class User extends Authenticatable
         'state',
         'zip_code',
         'account_type_id',
-        'profession'
+        'profession',
+        'code'
     ];
 
     /**

@@ -3,11 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SENEGAL LOGEMENT</title>
+    <title>BANK SYSTEM</title>
 
     <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css'>
     <link href="{{URL::to('bootstrap/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-
+    <style>
+      input:checked + label {
+         background-color: LightSeaGreen;
+       }
+    </style>
 </head>
 
 <body class="bg-blue-700">
@@ -20,7 +24,7 @@
             <button class="btn btn-outline-warning" style="margin-top: 10px;text-align: right;"
             >
                 <a href="/">
-                    <i class="fas fa-home text-blue-100"><strong>Accueil</strong> </i>
+                    <i class="fas fa-home text-blue-100"><strong>Home</strong> </i>
                 </a>
             </button>
         </div>
@@ -46,7 +50,7 @@
                     @endif
                 </div>
 
-                <div class="py-4 px-8 text-blue-600 text-xl border-b border-grey-lighter">Enregistrement de votre agence</div>
+                <div class="py-4 px-8 text-blue-600 text-xl border-b border-grey-lighter">Registration</div>
 
                 <form class="w-full max-w-lg" action="{{url('register')}}" method="post" enctype="multipart/form-data">
                     {{method_field('post')}}
@@ -57,27 +61,54 @@
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full px-3 ml-5">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                    Nom de l'agence
+                                    Lastname
                                 </label>
                                 <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                       type="text"  name="lastname" placeholder="Nom de l'agence"  required>
+                                       type="text"  name="lastname" placeholder="Your lastname"  required>
                             </div>
+                            <div class="w-full px-3 ml-5">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                    Firstname
+                                </label>
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                       type="text"  name="lastname" placeholder="Your firstname"  required>
+                            </div>
+                            <fieldset class="p-4">
+                                <div>
+                                    <legend class="font-bold">Gender</legend>
+                                </div>
+                                <div class="inline-flex">
+                                    <input class="hidden" type="radio" id="male" value="male" name="gender" checked/>
+                                    <label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 cursor-pointer rounded-l" for="male">Male</label>
+                                    <input class="hidden" type="radio" id="female" value="female" name="gender" />
+                                    <label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 cursor-pointer" for="female">Female</label>
+                                </div>
+                            </fieldset>
                         </div>
 
                         <div class="flex flex-wrap -mx-3 mb-6">
                             <div class="w-full px-3 ml-5">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                    Logo de l'entreprise
+                                    Picture
                                 </label>
                                 <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                       name="photo" type="file" placeholder="Logo de l'agence">
+                                       name="picture" type="file" placeholder="Your picture">
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3 ml-5">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                    Date of birth
+                                </label>
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
+                                    name="date_birth" type="date" placeholder="Your date of birth" required>
                             </div>
                         </div>
 
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0 ml-5">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                                Accounts
+                                Select an account
                             </label>
                             <div class="relative">
                                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
@@ -95,17 +126,52 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3 ml-5">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                Adresse exacte
+                                Address
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
-                                   name="address" placeholder="Spécifier une adresse complète(Quartier-Zone-rue-angle,..)" required>
+                                   name="address" placeholder="Your address" required>
                         </div>
                     </div>
-
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3 ml-5">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                                Numéro de téléphone
+                                City
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
+                                   name="city_name" placeholder="Your city name" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3 ml-5">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                State
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
+                                   name="state" placeholder="Your state name" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3 ml-5">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                Zip code
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
+                                   name="zip_code" placeholder="Your zip code" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3 ml-5">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                Profession
+                            </label>
+                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
+                                   name="profession" placeholder="Your profession" required>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3 ml-5">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                                Phone
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
                                    type="phone" name="phone"  pattern="[0-9]{2}[0-9]{3}[0-9]{4}" required>
@@ -121,7 +187,7 @@
                                 E-mail
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
-                                   type="email" name="email" placeholder="Adresse électronique de votre agence" required>
+                                   type="email" name="email" placeholder="E-mail" required>
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -131,7 +197,7 @@
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
                                    name="password" type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                   title="Doit contenir au minimum un nombre, une lettre majuscule, une lettre minuscule et au moins 8 charactères" required>
+                                 title="Must contain at minimum one number,a uppercase letter,a lowercase letter and at least 8 characters" required>
                         </div>
                     </div>
 

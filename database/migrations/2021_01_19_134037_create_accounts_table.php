@@ -19,7 +19,6 @@ class CreateAccountsTable extends Migration
             // $table->foreign('customer_id')->references('id') ->on('customers') -> onDelete('cascade');
             $table->text('account_no');
             $table->double('balance');
-            $table->string('created_on');
             $table->timestamps();
         });
     }

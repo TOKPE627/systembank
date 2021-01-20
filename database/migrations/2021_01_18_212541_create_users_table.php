@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('state')->varchar(255);
             $table->string('zip_code')->nullable();
             $table->string('profession')->nullable();
-            $table->string('registered_on');
+            $table->string('code')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

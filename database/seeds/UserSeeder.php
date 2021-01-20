@@ -28,12 +28,11 @@ class UserSeeder extends Seeder
                 'state'            => 'Fass',
                 'zip_code'         => '19192-78282',
                 'profession'       => 'Developer',
-                'registered_on'    => '12-18-2021',
             ],
             [
-                'lastname'         => 'BOSCO',
-                'firstname'        => 'Amy',
-                'email'            => 'amy@gmail.com',
+                'lastname'         => 'SHELDON',
+                'firstname'        => 'Cooper',
+                'email'            => 'cooper@gmail.com',
                 'profile_id'       => '2',
                 'password'         => \Illuminate\Support\Facades\Hash::make('passer'),
                 'date_birth'       => '12-09-1982',
@@ -45,7 +44,6 @@ class UserSeeder extends Seeder
                 'state'            => 'Colobane',
                 'zip_code'         => '39192-58282',
                 'profession'       => 'Maintenance',
-                'registered_on'    => '12-10-2020',
             ],
             [
                 'lastname'         => 'GARITH',
@@ -62,7 +60,6 @@ class UserSeeder extends Seeder
                 'state'            => 'Colobane',
                 'zip_code'         => '39192-58282',
                 'profession'       => 'Shoesmaker',
-                'registered_on'    => '12-10-2020',
             ],
         ];
 
