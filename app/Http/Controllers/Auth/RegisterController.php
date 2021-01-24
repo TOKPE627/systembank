@@ -63,19 +63,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-       $user = User::create([
-            'lastname'      => $data['lastname'],
-            'firstname'     => $data['firstname'],
-            'picture'       => $data['picture']->store('avatars'),
-            'city_name'     => $data['city_name'],
-            'state'         => $data['state'],
-            'address'       => $data['address'],
-            'profession'    => $data['profession'],
-            'phone'         => $data['phone'],
-            'email'         => $data['email'],
-            'password'      => Hash::make($data['password']),
-            'profile_id'    => $data['profile_id']
-        ]);
+        if(isset($data['picture'])){
+            $user = User::create([
+                'lastname'      => $data['lastname'],
+                'firstname'     => $data['firstname'],
+                'picture'       => $data['picture']->store('avatars'),
+                'city_name'     => $data['city_name'],
+                'state'         => $data['state'],
+                'address'       => $data['address'],
+                'profession'    => $data['profession'],
+                'phone'         => $data['phone'],
+                'email'         => $data['email'],
+                'password'      => Hash::make($data['password']),
+                'profile_id'    => $data['profile_id']
+            ]);
+        }
 
         $user->update([
             'code' => mt_rand(1111111111, 9999999999)

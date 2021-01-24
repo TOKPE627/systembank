@@ -128,7 +128,7 @@
                 <label class="mb-2 font-bold text-lg text-grey-darkest" for="password">Password</label>
                 <input class="border py-2 px-3 text-grey-darkest" type="password"  name="password" required>
             </div>
-            <button class="btn btn-blue mx-auto" type="submit">Connexion</button>
+            <button class="btn btn-blue mx-auto" type="submit">Login</button>
         </form>
 
         <a class="link link-grey" href="{{url('forgot_password')}}">Forgot password?</a>

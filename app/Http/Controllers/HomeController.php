@@ -32,8 +32,7 @@ class HomeController extends Controller
         $profile_admin_id      = (new Constant())::ADMIN_ID;
         $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
         $profile_customer_id   = (new Constant())::CUSTOMER_ID;
-      
-    
+
         if(Auth::user()->profile_id==$profile_admin_id) { //ADMIN
           
             return view('dashboard.admin.home',compact('profile_admin_id','profile_employee_id','profile_customer_id'));
