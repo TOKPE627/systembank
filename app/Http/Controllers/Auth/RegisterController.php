@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -64,6 +65,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if(isset($data['picture'])){
+        
+            //$avatar   = $data['picture'];
+            //$extension = $avatar->getClientOriginalExtension();
+           // $filename =time() . '.' . $extension;
+            //$avatar->move('uploads/'.$filename);
+           // $currentUser=  Auth::User();
+           
+            //$currentUser->picture=$filename;
+           // $pathToFile = Storage::disk('public')->put('uploads/', $avatar);
+            
             $user = User::create([
                 'lastname'      => $data['lastname'],
                 'firstname'     => $data['firstname'],
