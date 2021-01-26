@@ -26,9 +26,15 @@ Route::get('registration','WelcomeController@registration');
 
 Route::resource('customer','CustomerController');
 
+Route::get('account_details/{account_no}','AccountController@accountDetails');
+
 Route::resource('account','AccountController');
 
+Route::resource('transaction','TransactionController');
+
 Route::get('transactions/{account_no}','TransactionController@accountTransactions');
+
+Route::get('fund_transfert','TransactionController@fund_transfert');
 
 //Route::get('customer/details','CustomerController@details');
 

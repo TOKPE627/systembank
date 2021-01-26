@@ -21,7 +21,7 @@ class CustomerController extends Controller
         $no_result             = (new Constant())::NO_RESULT_FOUND;
 
         $customers= User::where(['profile_id'=>$profile_customer_id])->get();
-        return view('dashboard.shared.customer',compact('profile_admin_id','profile_employee_id','profile_customer_id','customers','no_result'));
+        return view('dashboard.shared.customer.all',compact('profile_admin_id','profile_employee_id','profile_customer_id','customers','no_result'));
     }
 
     /**
@@ -89,4 +89,6 @@ class CustomerController extends Controller
     {
         //
     }
+
+
 }

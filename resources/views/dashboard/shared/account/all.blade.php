@@ -32,7 +32,9 @@
                                     @foreach($accounts as $a)
                                         <tr>
                                             <td>{{$a->user->lastname}} {{$a->user->firstname}}</td>
-                                            <td>{{$a->account_no}}</td>
+                                            <td>
+                                               <a href="{{url('account_details/'.$a->account_no)}}">{{$a->account_no}}</a>
+                                            </td>
                                             <td>{{$a->balance}} $</td>
                                             <td>{{$a->accounttype->title}}</td>
                                             <td>{{$a->status}}</td>
@@ -45,6 +47,8 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
+
                         </div>
                 </div>
         @endif

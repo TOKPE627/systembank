@@ -21,8 +21,20 @@ class AccountController extends Controller
         $no_result             = (new Constant())::NO_RESULT_FOUND;
 
         $accounts= Account::all();
-        return view('dashboard.shared.account',compact('profile_admin_id','profile_employee_id','profile_customer_id','accounts','no_result'));
+        return view('dashboard.shared.account.all',compact('profile_admin_id','profile_employee_id','profile_customer_id','accounts','no_result'));
     
+    }
+
+    public function accountDetails($account_no){        
+         
+        $profile_admin_id      = (new Constant())::ADMIN_ID;
+        $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
+        $profile_customer_id   = (new Constant())::CUSTOMER_ID;
+        $no_result             = (new Constant())::NO_RESULT_FOUND;
+
+        $account= Account::where(['account_no' => $account_no])->first();
+        return view('dashboard.shared.account.details',compact('profile_admin_id','profile_employee_id','profile_customer_id','account','no_result'));
+   
     }
 
     /**

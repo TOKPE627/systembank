@@ -31,7 +31,9 @@
                                     @foreach($customers as $c)
                                         <tr>
                                           
-                                            <td>{{$c->lastname}} {{$c->firstname}}</td>
+                                            <td>
+                                              {{$c->lastname}} {{$c->firstname}}
+                                            </td>
                                             <td>{{$c->email}}</td>
                                             <td>{{$c->phone_no}}</td>
                                             <td>{{$c->created_at}}</td>
