@@ -15,10 +15,13 @@ class CreateAccountsTable extends Migration
     { 
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->integer('customer_id');
-            // $table->foreign('customer_id')->references('id') ->on('customers') -> onDelete('cascade');
+            $table->integer('user_id')
+                  ->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('accounttype_id')
+                  ->foreign('accounttype_id')->references('id') ->on('accounttypes')->onDelete('cascade');
             $table->text('account_no');
-            $table->double('balance');
+            $table->double('balance')->default(0.0);
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

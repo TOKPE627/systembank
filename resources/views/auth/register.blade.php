@@ -112,7 +112,7 @@
                             </label>
                             <div class="relative">
                                 <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
-                                        name="district_id">
+                                        name="accounttype_id">
                                     @foreach($accounttypes as $t)
                                         <option value="{{$t->id}}">{{$t->title}}</option>
                                     @endforeach
@@ -174,7 +174,7 @@
                                 Phone
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"
-                                   type="phone" name="phone"  pattern="[0-9]{2}[0-9]{3}[0-9]{4}" required>
+                                   type="phone" name="phone_no"  pattern="[0-9]{2}[0-9]{3}[0-9]{4}" required>
                             <small>Format: 774567890</small>
 
                         </div>

@@ -32,6 +32,8 @@ class User extends Authenticatable
         'zip_code',
         'account_type_id',
         'profession',
+        //'account_no',
+        'status',
         'code'
     ];
 
@@ -52,4 +54,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function accounts(){
+        return $this->hasMany(\App\Models\Account::class);
+    }
 }

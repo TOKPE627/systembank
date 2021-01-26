@@ -310,7 +310,37 @@
 <script src="{{URL::to('bootstrap/js/demo/chart-pie-demo.js')}}"></script>
 
 
-
+<script>
+        $('#deleteuser').on('show.bs.modal',function(event){
+            var button=$(event.relatedTarget)
+            var modal=$(this)
+            var user_id   =  button.data('userid')
+            modal.find('.modal-body #user_id').val(user_id)
+        })
+    </script>
+    <script>
+        $('#detailsuser').on('show.bs.modal',function(event){
+            var button             =  $(event.relatedTarget)
+            var modal              =  $(this)
+            var datebirth          =  button.data('datebirth')
+            var gender             =  button.data('gender')
+            var cityname           =  button.data('cityname')
+            var zipcode            =  button.data('zipcode')
+            var state              =  button.data('state')
+            var address            =  button.data('address')
+            var phone              =  button.data('phone')
+            var profession         =  button.data('profession')
+            modal.find('.modal-body #datebirth').val(datebirth)
+            modal.find('.modal-body #gender').val(gender)
+            modal.find('.modal-body #cityname').val(cityname)
+            modal.find('.modal-body #zipcode').val(zipcode)
+            modal.find('.modal-body #state').val(state)
+            modal.find('.modal-body #phone').val(phone)
+            modal.find('.modal-body #address').val(address)
+            modal.find('.modal-body #cityname').val(cityname)
+            modal.find('.modal-body #profession').val(profession)
+        })
+    </script>
 </body>
 
 </html>

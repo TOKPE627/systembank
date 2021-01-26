@@ -9,5 +9,5 @@ class Accounttype extends Model
 
     protected $fillable=['title'];
 
-    
+ 
 }

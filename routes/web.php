@@ -23,3 +23,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('registration','WelcomeController@registration');
+
+Route::resource('customer','CustomerController');
+
+Route::resource('account','AccountController');
+
+Route::get('transactions/{account_no}','TransactionController@accountTransactions');
+
+//Route::get('customer/details','CustomerController@details');
+

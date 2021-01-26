@@ -15,6 +15,7 @@ class Constant
     CONST EMPLOYEE_ID = 2;
 
     CONST CUSTOMER_ID = 3;
+    CONST NO_RESULT_FOUND      = "No result found";
 
 }
 

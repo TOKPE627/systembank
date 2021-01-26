@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Models\Account;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -64,36 +65,36 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if(isset($data['picture'])){
-        
-            //$avatar   = $data['picture'];
-            //$extension = $avatar->getClientOriginalExtension();
-           // $filename =time() . '.' . $extension;
-            //$avatar->move('uploads/'.$filename);
-           // $currentUser=  Auth::User();
-           
-            //$currentUser->picture=$filename;
-           // $pathToFile = Storage::disk('public')->put('uploads/', $avatar);
-            
+        if(isset($data['picture'])){    
             $user = User::create([
                 'lastname'      => $data['lastname'],
                 'firstname'     => $data['firstname'],
                 'picture'       => $data['picture']->store('avatars'),
+                'date_birth'    => $data['date_birth'],
+                'gender'        => $data['gender'],
                 'city_name'     => $data['city_name'],
                 'state'         => $data['state'],
                 'address'       => $data['address'],
+                'zip_code'      => $data['zip_code'],
                 'profession'    => $data['profession'],
-                'phone'         => $data['phone'],
+                'phone_no'      => $data['phone_no'],
                 'email'         => $data['email'],
                 'password'      => Hash::make($data['password']),
-                'profile_id'    => $data['profile_id']
+                'profile_id'    => $data['profile_id'],
+                'code'          => mt_rand(1111111111, 9999999999)
+           ]);
+        }
+        
+        if(User::where(['id'  => $user->id])->first()){
+            Account::create([
+                'user_id'        => $user->id,
+                'accounttype_id' => $data['accounttype_id'],
+                'account_no'     => mt_rand(1111111111, 9999999999)
             ]);
         }
-
-        $user->update([
-            'code' => mt_rand(1111111111, 9999999999)
-        ]);
-
+      
         return $user;
     }
 }
+
+
