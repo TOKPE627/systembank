@@ -36,9 +36,7 @@
                         </div>
 
                         <div class="form-group">
-
                             <label>Fund trunsfert options</label>
-
                             <select name="transfert_option" class="form-control">
                               <option value="local">Local</option>
                               <option value="internationational">International</option>
@@ -52,7 +50,8 @@
                        
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-default">Erase</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary"
+                            >Submit</button>
                         </div>
                     </div>
                 </form>

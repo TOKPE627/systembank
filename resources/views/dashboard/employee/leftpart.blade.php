@@ -7,8 +7,8 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header"></h6>
-            <a class="collapse-item" href="{{URL::to('customer/deposit')}}">Deposit</a>
-            <a class="collapse-item" href="{{URL::to('customer/withdraw')}}">withdrawal</a>
+            <a class="collapse-item" href="{{URL::to('operation')}}">All operation</a>
+            <a class="collapse-item" href="{{URL::to('operation_proceed')}}">Proceed an operation</a>
         </div>
     </div>
 </li>

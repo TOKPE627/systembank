@@ -195,7 +195,7 @@
             <!--EMPLOYEE WELCOME MESSAGE-->
                 @if(Auth::user()->profile_id==$profile_employee_id)
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Welcome Employee</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Welcome Bank Teller</h1>
                         <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>-->
                     </div>
                     <div class="box-header flex justify-center">
@@ -340,6 +340,32 @@
             modal.find('.modal-body #cityname').val(cityname)
             modal.find('.modal-body #profession').val(profession)
         })
+    </script>
+    <script>
+     $(".transactionInfosForm").submit('on',function(e){
+        e.preventDefault();
+    					$.ajax({
+						  dataType : "json",
+						  type : "GET",
+						  data : $(".transactionInfosForm").serialize(),
+						  url: 'checkAccountInfos',
+						 /* success:function(data)
+						  {
+									if(data.status == 0)
+									{
+									  $('#ErrorMessage').html('<span style="color:red;">'+data.message+'</span>');
+									}
+									if(data.status == 1)
+									{
+										  $('#ErrorMessage').html('<span style="color:green;">'+data.message+'</span>');
+										  
+									}
+						  },
+						  error: function (jqXHR, status, err) {
+							  $('#ErrorMessage').html('<span style="color:red;">Une erreur technique s\'est produite.</span>');
+						  }*/
+ 					});
+     });
     </script>
 </body>
 

@@ -39,12 +39,11 @@ class HomeController extends Controller
         }
 
         if(Auth::user()->profile_id==$profile_employee_id) { //ADMIN
-          
+            
             return view('dashboard.employee.home',compact('profile_admin_id','profile_employee_id','profile_customer_id'));
         }
         
         if(Auth::user()->profile_id==$profile_customer_id) { //ADMIN
-          
             return view('dashboard.customer.home',compact('profile_admin_id','profile_employee_id','profile_customer_id'));
         }
     }

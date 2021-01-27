@@ -4,7 +4,7 @@
 
     <!-- Content Row -->
     <div class="row">
-           MAIN CONTENT HERE EMPLOYEE
+           MAIN CONTENT HERE BANK TELLER
         </div>
 
 @endsection

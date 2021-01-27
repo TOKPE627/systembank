@@ -36,5 +36,15 @@ Route::get('transactions/{account_no}','TransactionController@accountTransaction
 
 Route::get('fund_transfert','TransactionController@fund_transfert');
 
+Route::get('checkAccountInfos','TransactionController@checkAccountInfos');
+
+Route::resource('operation','OperationController');
+
+Route::get('operation_proceed','OperationController@operation_proceed');
+
+Route::get('operations/{account_no}','OperationController@accountOperations');
+
+Route::resource('tac','TACController');
+
 //Route::get('customer/details','CustomerController@details');
 
