@@ -19,5 +19,9 @@ class Constant
     CONST ACCOUNT_NOT_FOUND    ="OOps!! Account not found";
     CONST INSUFFICIENT_AMOUNT  ="OOps!! Amount Insufficient.Please recharge your account ";
     CONST SUCCESS_DELETE_USER  ="Customer Deleted successfully!";
+
+
+    //APP_INFOS
+    CONST APP_NAME             ="BANK SYSTEM MANAGEMENT";
 }
 

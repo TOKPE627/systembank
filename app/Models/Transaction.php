@@ -8,12 +8,11 @@ class Transaction extends Model
 {
 
     protected $fillable=[
-                         'account_id',
                          'sender_id',
                          'sender_account_no',
+                         'receiver_bank_name',
                          'receiver_name',
                          'receiver_account_no',
-                         'receiver_bank_name',
                          'swift_code',
                          'transfert_option',
                          'transfert_amount',

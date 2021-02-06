@@ -22,6 +22,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('showLogin','WelcomeController@showLogin');
+
+Route::get('about_us','WelcomeController@about_us');
+
+Route::get('privacy','WelcomeController@privacy');
+
+Route::get('show_more_operation','WelcomeController@show_more_operation');
+
 Route::get('registration','WelcomeController@registration');
 
 Route::resource('customer','CustomerController');
