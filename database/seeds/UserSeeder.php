@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'profile_id'       => '1',
                 'password'         => \Illuminate\Support\Facades\Hash::make('passer'),
                 'date_birth'       => '12-09-1980',
-                'picture'          => 'mypicture.png',
+                //'picture'          => 'mypicture.png',
                 'phone_no'         => '+221772049681',
                 'gender'           => 'Male',
                 'address'          => 'Rue 34 Ouest Foire',

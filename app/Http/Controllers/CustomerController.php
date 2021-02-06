@@ -7,6 +7,11 @@ use App\API\Constant;
 use App\User;
 class CustomerController extends Controller
 {
+    public $constant;
+    public function __construct()
+    {
+        $this->constant = new Constant();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -85,9 +90,12 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $user = User::findOrFail($request['user_id']);
+        $user->delete();
+        return redirect()->back()->with('success',$this->constant::SUCCESS_DELETE_USER);
+     
     }
 
 

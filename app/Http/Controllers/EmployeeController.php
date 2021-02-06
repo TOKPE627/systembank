@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\API\Constant;
+use App\User;
 class EmployeeController extends Controller
 {
     /**
@@ -13,7 +14,14 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        
+        $profile_admin_id      = (new Constant())::ADMIN_ID;
+        $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
+        $profile_customer_id   = (new Constant())::CUSTOMER_ID;
+        $no_result             = (new Constant())::NO_RESULT_FOUND;
+
+        $employees= User::where(['profile_id'=>$profile_employee_id])->get();
+        return view('dashboard.shared.employee.all',compact('profile_admin_id','profile_employee_id','profile_customer_id','employees','no_result'));
     }
 
     /**

@@ -26,6 +26,8 @@ Route::get('registration','WelcomeController@registration');
 
 Route::resource('customer','CustomerController');
 
+Route::resource('employee','EmployeeController');
+
 Route::get('account_details/{account_no}','AccountController@accountDetails');
 
 Route::resource('account','AccountController');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\API\Constant;
+use App\Models\Account;
 
 
 class HomeController extends Controller
@@ -44,7 +45,8 @@ class HomeController extends Controller
         }
         
         if(Auth::user()->profile_id==$profile_customer_id) { //ADMIN
-            return view('dashboard.customer.home',compact('profile_admin_id','profile_employee_id','profile_customer_id'));
+            $account = Account::where(['user_id'=>Auth::user()->id])->first();
+            return view('dashboard.customer.home',compact('profile_admin_id','profile_employee_id','profile_customer_id','account'));
         }
     }
 

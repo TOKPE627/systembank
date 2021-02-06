@@ -31,7 +31,7 @@
 
 
                         <div class="form-group">
-                            <label for="">Amount to transfert</label>
+                            <label for="">Amount to transfert($)</label>
                             <input type="number" class="form-control" name="transfert_amount" required>
                         </div>
 

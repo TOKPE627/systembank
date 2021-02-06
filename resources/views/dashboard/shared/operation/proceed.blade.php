@@ -23,7 +23,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Amount</label>
+                            <label for="">Amount($)</label>
                             <input type="number" class="form-control" name="amount" required>
                         </div>                       
                         <div class="modal-footer">

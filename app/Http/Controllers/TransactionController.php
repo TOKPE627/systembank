@@ -25,8 +25,15 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
-    }
+        
+        $profile_admin_id      = (new Constant())::ADMIN_ID;
+        $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
+        $profile_customer_id   = (new Constant())::CUSTOMER_ID;
+        $no_result             = (new Constant())::NO_RESULT_FOUND;
+
+        $transactions= Transaction::all();
+        return view('dashboard.shared.transaction.all',compact('profile_admin_id','profile_employee_id','profile_customer_id','transactions','no_result'));
+    } 
 
     /**
      * Show the form for creating a new resource.

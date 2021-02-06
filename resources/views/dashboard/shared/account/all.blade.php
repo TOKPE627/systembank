@@ -24,7 +24,7 @@
                                     <th>Balance</th>
                                     <th>Account Type</th>
                                     <th>Account Status</th>
-                                    <th>View Statement</th>
+                                    <!-- <th>View Statement</th>-->
                         
                                 </tr>
                                 </thead>
@@ -38,10 +38,10 @@
                                             <td>{{$a->balance}} $</td>
                                             <td>{{$a->accounttype->title}}</td>
                                             <td>{{$a->status}}</td>
-                                            <td>
+                                            <!--<td>
                                                <a href="{{url('transactions/'.$a->account_no)}}">Statement
                                                 </a>    
-                                            </td>
+                                            </td>-->
                                        
                                         </tr>
                                     @endforeach
