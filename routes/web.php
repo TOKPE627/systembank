@@ -28,6 +28,10 @@ Route::get('about_us','WelcomeController@about_us');
 
 Route::get('privacy','WelcomeController@privacy');
 
+Route::resource('contactus','ContactusController');
+
+Route::get('message/{id}','ContactusController@message');
+
 Route::get('show_more_operation','WelcomeController@show_more_operation');
 
 Route::get('registration','WelcomeController@registration');

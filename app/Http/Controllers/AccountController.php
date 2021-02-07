@@ -3,11 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\API\Constant;
 use App\Models\Account;
-
+use App\Models\Contactus;
+use App\Models\Operation;
+use App\Models\Transaction;
 class AccountController extends Controller
 {
+   public $constant;
+   public $contactus;
+   public $user; 
+   public $account; 
+   public $operation; 
+   public $transaction;
+
+    public function __construct()
+    {
+        $this->constant    = new Constant();
+        $this->contactus   = new Contactus();
+        $this->user        = new User();
+        $this->account     = new Account();
+        $this->operation   = new Operation();
+        $this->transaction = new Transaction();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,25 +34,39 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $profile_admin_id      = (new Constant())::ADMIN_ID;
-        $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
-        $profile_customer_id   = (new Constant())::CUSTOMER_ID;
-        $no_result             = (new Constant())::NO_RESULT_FOUND;
+        $profile_admin_id      = $this->constant::ADMIN_ID;
+        $profile_employee_id   = $this->constant::EMPLOYEE_ID;
+        $profile_customer_id   = $this->constant::CUSTOMER_ID;
+        $no_result             = $this->constant::NO_RESULT_FOUND; 
+        $last_messages         = $this->contactus->unread_messages();
+        $customers             = $this->user->customers();
+        $banktellers           = $this->user->banktellers();
+        $accounts              = $this->account->accounts();
+        $operations            = $this->operation->operations();
+        $transactions          = $this->transaction->transactions();
 
-        $accounts= Account::all();
-        return view('dashboard.shared.account.all',compact('profile_admin_id','profile_employee_id','profile_customer_id','accounts','no_result'));
+        return view('dashboard.shared.account.all',compact('profile_admin_id','profile_employee_id',
+        'profile_customer_id','customers','no_result','last_messages','banktellers','accounts',
+        'operations','transactions'));
     
     }
 
     public function accountDetails($account_no){        
-         
-        $profile_admin_id      = (new Constant())::ADMIN_ID;
-        $profile_employee_id   = (new Constant())::EMPLOYEE_ID;
-        $profile_customer_id   = (new Constant())::CUSTOMER_ID;
-        $no_result             = (new Constant())::NO_RESULT_FOUND;
-
-        $account= Account::where(['account_no' => $account_no])->first();
-        return view('dashboard.shared.account.details',compact('profile_admin_id','profile_employee_id','profile_customer_id','account','no_result'));
+        $profile_admin_id      = $this->constant::ADMIN_ID;
+        $profile_employee_id   = $this->constant::EMPLOYEE_ID;
+        $profile_customer_id   = $this->constant::CUSTOMER_ID;
+        $no_result             = $this->constant::NO_RESULT_FOUND; 
+        $last_messages         = $this->contactus->unread_messages();
+        $customers             = $this->user->customers();
+        $banktellers           = $this->user->banktellers();
+        $accounts              = $this->account->accounts();
+        $operations            = $this->operation->operations();
+        $transactions          = $this->transaction->transactions();
+        $account               = $this->account->account($account_no);
+        
+        return view('dashboard.shared.account.details',compact('profile_admin_id','profile_employee_id',
+        'profile_customer_id','customers','no_result','last_messages','banktellers','accounts',
+        'operations','transactions','account'));
    
     }
 

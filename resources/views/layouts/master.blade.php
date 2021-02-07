@@ -124,7 +124,9 @@
                             </form>
                         </div>
                     </li>
-
+                    @if(Auth::user()->profile_id == $profile_admin_id)
+                        @include('dashboard.admin.lastmessages')
+                    @endif
                 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">

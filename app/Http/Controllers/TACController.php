@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\API\Constant;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Models\Account;
+use App\Models\Contactus;
+use App\Models\Operation;
+use App\Models\Transaction;
 class TACController extends Controller
 {
     public $constant;

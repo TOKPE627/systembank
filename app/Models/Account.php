@@ -15,4 +15,19 @@ class Account extends Model
     public function accounttype(){
         return $this->belongsTo(Accounttype::class);
     }
+
+    public function accounts(){
+        return Account::all();
+    }
+
+    
+    public function account($account_no){
+        return Account::where(['account_no' => $account_no])->first();
+    }
+
+    public function accountByUserId($user_id){
+        return  Account::where(['user_id'=>$user_id])->first();
+    }
+
+
 }

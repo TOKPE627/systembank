@@ -9,7 +9,7 @@
 
     <script src="https://kit.fontawesome.com/458678413d.js" crossorigin="anonymous"></script>
 
-    <title>SENEGAL LOGEMENT</title>
+    <title>BANK MANAGEMENT SYSTEM</title>
     <style>
         #menu-toggle:checked + #menu{
             display: block;

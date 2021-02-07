@@ -12,7 +12,7 @@
                 </button>
           
             </p>
-        @if($employees->isEmpty())
+        @if($banktellers->isEmpty())
             <h1 style="text-align: center;color: blue;">{{$no_result}}</h1>
 
         @else
@@ -36,7 +36,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($employees as $c)
+                                    @foreach($banktellers as $c)
                                         <tr>
                                           
                                             <td>

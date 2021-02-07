@@ -69,7 +69,7 @@
 
         <div class="w-full md:w-1/3 p-5 text-left">
             <div class="mt-6 text-xl font-semibold">Write Us</div>
-            <form class="w-4/5 mx-auto mt-2 px-6 pt-6 pb-4 rounded" action="" method="post">
+            <form class="w-4/5 mx-auto mt-2 px-6 pt-6 pb-4 rounded" action="{{route('contactus.store','test')}}" method="post">
                     {{method_field('post')}}
                     {{csrf_field()}}
                 <div class="flex items-center mb-4">

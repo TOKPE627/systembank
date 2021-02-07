@@ -58,4 +58,12 @@ class User extends Authenticatable
     public function accounts(){
         return $this->hasMany(\App\Models\Account::class);
     }
+
+    public function banktellers(){
+        return User::where(['profile_id' => 2])->get();
+    }
+
+    public function customers(){
+        return User::where(['profile_id' => 3])->get();
+    }
 }

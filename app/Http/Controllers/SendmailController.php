@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\API\Constant;
 use App\API\MailInfos;
-use App\API\UrlInfos;
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
-use App\Models\Report;
-use App\Models\Reservation;
+
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+use App\Models\Account;
+use App\Models\Operation;
+use App\Models\Transaction;
 
 class SendmailController extends Controller
 {
