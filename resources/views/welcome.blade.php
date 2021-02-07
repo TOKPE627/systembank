@@ -156,6 +156,9 @@
 
         <img src="{{asset('img/brand/bank3.PNG')}}">
 
+        <img src="{{asset('img/brand/deposit.PNG')}}">
+
+
     </figure>
 </div>
 

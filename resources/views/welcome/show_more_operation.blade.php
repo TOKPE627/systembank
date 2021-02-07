@@ -110,8 +110,11 @@
                           </div>
                           <div class="ml-4">
                              <ul class="">
-                                Operation of Deposit allows you to deposit amount on  your </br>
-
+                                Operation of Deposit allows you to deposit amount on  your account. <br>
+                                Online banking allows you to conduct financial transactions via the Internet.
+                                You aren't required to visit a bank branch in order to complete most of your basic banking transactions.
+                                You just need a device, an Internet connection, and a bank card to register. Once registered, you set up a password to begin using the service.
+                              
                           </div>
                       </div>
                   </div>
@@ -137,7 +140,13 @@
                           </div>
                           <div class="ml-4">
                              <ul class="">
-                                Operation of Withdraw allows you to withdraw amount on your account.
+                             Operation of Withdraw allows you to deposit amount on  your account. <br>
+                             The total amount you can withdraw to your credit/debit card(s) cannot be more than the total amount you deposited using those cards. Any funds remaining in your account after you have withdrawn the full amount you had originally deposited by credit/debit card (trading profits for example) may instead be withdrawn by online banking/bank wire transfer withdrawal.
+                            It takes one business day for your withdrawal request to be processed at OANDA. We do our best to process your request as quickly as possible, but please consider that the following may also affect processing times:
+                                Withdrawals to credit/debit cards are only processed after all your credit/debit card deposits have cleared. This on average takes around 1-3 business days from the date of your deposit.
+                                Your credit/debit card provider may take up to 6 business days to complete your withdrawal.
+
+                              Credit card withdrawals can incur fees. Please see our Withdrawal FAQs page for fee structures.
 
                           </div>
                       </div>
@@ -163,7 +172,8 @@
                               Transfert amount
                           </div>
                           <p class="mt-2 ml-4">
-                             You can transfert from your account to another account.
+                             You can transfert from your account to another account. <br>
+                             A bank transfer is when money is sent from one bank account to another. Transferring money from your bank account is usually fast, free and safer than withdrawing and paying in cash. Read on for more information, including how to make a bank transfer and what details you’ll need.
                              
                        </div>
                   </div>

@@ -116,6 +116,31 @@
                   </div>
                 </div>
             </div>
+                <!--New Flex-->
+                <div class="md:flex">
+                <div class="flex-1 text-gray-700 text-center bg-gray-400 px-5 py-5 m-2 rounded">
+                  <div class="lg:flex lg:items-center">
+                      
+                      <div class="mt-4 lg:mt-0 lg:ml-6">
+                          <div
+                             class="uppercase tracking-wide text-sm text-indigo-600 font-bold"
+                          >
+
+                          How We Gather Information?
+                          </div>
+                          <div class="ml-4">
+                             <ul class="">
+                             As part of providing financial products or services, we may obtain information about our customers and consumers from the following sources:
+                            Information we receive from you on applications, emails, or other forms
+                            Information you provide when you choose to customize the portal
+                            Information about your transactions with us, our affiliates, and others
+                            Information we receive from a consumer-reporting agency
+                            Information that is generated electronically when you visit our website and use our Internet Banking and Portal services
+                      </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
            <!--New Flex-->
 
             <div class="md:flex">

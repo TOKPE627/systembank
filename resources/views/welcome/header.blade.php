@@ -7,7 +7,7 @@
 <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
       <div class="flex-1 flex justify-between items-center">
         <a href="#">
-        <img src="{{asset('img/brand/bank1.png')}}" alt="" class="h-12 w-auto">
+        <img src="{{asset('img/brand/bank1.png')}}" alt="" class="h-12 w-auto" style="width:100px;">
        </a>
       </div>
        <label for="menu-toggle" class="cursor-pointer lg:hidden block">
