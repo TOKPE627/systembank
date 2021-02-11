@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\API\Constant;
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
+use App\User;
+use App\Models\Account;
+use App\Models\Operation;
+use App\Models\Transaction;
+
 use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
@@ -67,7 +72,6 @@ class ContactUsController extends Controller
     
         return view('welcome.contactus.response',compact('message','profile_admin_id','profile_employee_id',
             'profile_customer_id','customers','no_result','last_messages','banktellers','accounts',
-            'operations','transactions'));
-        }      
+            'operations','transactions'));   
     }
 }
